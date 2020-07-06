@@ -22,8 +22,8 @@ before you start working, you need to open an account on the [restpack](https://
 
 # Features
 
-[*] Fast and easy
-[*] Free
-[*] GUI (Graphic User Interface)
+- [x] Fast and easy
+- [x] Free
+- [x] GUI (Graphic User Interface)
 
 #### Thank You.
