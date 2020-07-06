@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
         url = 'https://restpack.io/api/html2pdf/v6/convert'
         headers = {
         'Content-Type': 'application/json',
-        'x-access-token': 'hHc5xxoTEc5x4EBAjunfG8gQk6g6MEMF7PmB78qjJHYpieLB' # Token or Key ------------------------------********************------------------
+        'x-access-token': 'hHc5xxoTEc5x4EBAjunfG8gQk6g6MEMF7PmB78qjJHYpieLB' # Enter Token ------------------------------********************------------------
         }
         payload = {
         'url': in_url, # URL For cinvert to Pdf
