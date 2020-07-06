@@ -1,4 +1,4 @@
-# Follow we ** https://github.com/YasinBlackhat **
+# Follow me ** https://github.com/YasinBlackhat **
 # @ !
 import requests
 import json
