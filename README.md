@@ -43,7 +43,7 @@ headers = {
   'x-access-token': 'Your Token'
 }
 payload = {
-  'url': 'https://github.com/YasinBlackhat', # URL For cinvert to Pdf
+  'url': 'https://github.com/YasinBlackhat', # URL For convert to Pdf
   'json': 'true'
 }
 
