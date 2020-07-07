@@ -1,10 +1,14 @@
 # Follow me ** https://github.com/YasinBlackhat **
-# @ !
 import requests
 import json
 
 in_url = str(input('Enter Your URl Address : ')) # Address => https:\\www.google.com
 loc = str(input('Enter Your Address Location : ')) # Location => C:\\
+while in_url == '' and loc == '':
+  print('Humm + Fill in the blanks +')
+  in_url = str(input('Enter Your URl Address : ')) # URL
+  loc = str(input('Enter Your Address Location : ')) # Location
+  
 print('Loading...')
 
 url = 'https://restpack.io/api/html2pdf/v6/convert'
@@ -26,7 +30,8 @@ k = response.json()
 file_loc = k['file']
 r = requests.get(file_loc)
 
-l = loc+'/blachat.pdf'
-with open(l, 'wb') as f:
+loc = loc+'/blachat.pdf'
+with open(loc, 'wb') as f:
     f.write(r.content)
+    
 print('Done !!')
