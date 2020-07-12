@@ -1,10 +1,10 @@
-from PyQt5.QtGui import (QPixmap)
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
-from PyQt5.QtGui import QIcon
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import (QPixmap)
+from PyQt5.QtGui import QIcon
 from PyQt5 import uic
-import os
 import sys
+import os
 
 class Ui_MainWindow(object):
     file_loc = str('')
@@ -73,29 +73,28 @@ class Ui_MainWindow(object):
     def res(self):
         import requests
         import json
+        
         k = Ui_MainWindow.file_loc
-
         if k == '':
             self.save_file()
 
         in_url = self.url_in.text()
         loc = str(Ui_MainWindow.file_loc)
         url = 'https://restpack.io/api/html2pdf/v6/convert'
+        
         headers = {
         'Content-Type': 'application/json',
         'x-access-token': 'hHc5xxoTEc5x4EBAjunfG8gQk6g6MEMF7PmB78qjJHYpieLB' # Enter Token ------------------------------********************------------------
         }
+        
         payload = {
         'url': in_url, # URL For cinvert to Pdf
         'json': 'true'
         }
 
         response = requests.post(url, headers = headers, params = {}, data = json.dumps(payload))
-
         response.raise_for_status()
-
         k = response.json()
-
         file_loc = k['file']
         r = requests.get(file_loc)
 
