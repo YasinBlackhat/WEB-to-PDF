@@ -8,7 +8,7 @@ import os
 # Import Library
 
 class Ui_MainWindow(object):
-    file_loc = str('')
+    file_loc = str('') # var
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
