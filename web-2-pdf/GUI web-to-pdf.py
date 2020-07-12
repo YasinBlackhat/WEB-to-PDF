@@ -5,6 +5,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 import sys
 import os
+# Import Library
 
 class Ui_MainWindow(object):
     file_loc = str('')
@@ -66,13 +67,13 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
 
-        self.submit.clicked.connect(self.res)
-        self.save.clicked.connect(self.save_file)
+        self.submit.clicked.connect(self.res) # Submit function clicked to request
+        self.save.clicked.connect(self.save_file) # save function clicked to change location file for save
 
 
-    def res(self):
+    def res(self): # function download
         import requests
-        import json
+        import json # lib
         
         k = Ui_MainWindow.file_loc
         if k == '':
@@ -92,9 +93,9 @@ class Ui_MainWindow(object):
         'json': 'true'
         }
 
-        response = requests.post(url, headers = headers, params = {}, data = json.dumps(payload))
+        response = requests.post(url, headers = headers, params = {}, data = json.dumps(payload)) # requests
         response.raise_for_status()
-        k = response.json()
+        k = response.json() # get json file
         file_loc = k['file']
         r = requests.get(file_loc)
 
@@ -103,7 +104,7 @@ class Ui_MainWindow(object):
             f.write(r.content)
 
 
-    def save_file(self):
+    def save_file(self): # save function
         savefile = QFileDialog.getSaveFileName()
         Ui_MainWindow.file_loc = savefile[0]
 
@@ -124,3 +125,5 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+    
+    # Thank you
