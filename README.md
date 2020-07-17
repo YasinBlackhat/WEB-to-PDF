@@ -35,9 +35,9 @@ before you start working, you need to open an account on the [restpack](https://
 ```python
 import PyQt5
 import requests
-import json
+import json # library
 
-url = 'https://restpack.io/api/html2pdf/v6/convert'
+url = 'https://restpack.io/api/html2pdf/v6/convert' # api URL
 headers = {
   'Content-Type': 'application/json',
   'x-access-token': 'Your Token'
