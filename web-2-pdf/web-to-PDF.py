@@ -21,7 +21,7 @@ def getting(in_url): # Function Convert web to PDF
       'x-access-token': 'hHc5xxoTEc5x4EBAjunfG8gQk6g6MEMF7PmB78qjJHYpieLB' # Token or Key 
     }
     payload = { # Payload Api
-      'url': in_url, # URL For cinvert to Pdf
+      'url': in_url, # URL For convert to Pdf
       'json': 'true'
     }
 
@@ -35,6 +35,6 @@ def getting(in_url): # Function Convert web to PDF
 r = geting(in_url) # get file url for Download
 loc = loc+'/blachat.pdf'
 with open(loc, 'wb') as f:
-    f.write(r.content)
+    f.write(r.content) # save file on pc
     
 print('Done !! ): ') # Down Thank You..
