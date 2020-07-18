@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
 
     def res(self): # function download
         import requests
-        import json # lib
+        import json # import library
         
         k = Ui_MainWindow.file_loc
         if k == '':
@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
 
         in_url = self.url_in.text()
         loc = str(Ui_MainWindow.file_loc)
-        url = 'https://restpack.io/api/html2pdf/v6/convert'
+        url = 'https://restpack.io/api/html2pdf/v6/convert' # api URL
         
         headers = {
         'Content-Type': 'application/json',
@@ -92,17 +92,17 @@ class Ui_MainWindow(object):
         'url': in_url, # URL For cinvert to Pdf
         'json': 'true'
         }
-
-        response = requests.post(url, headers = headers, params = {}, data = json.dumps(payload)) # requests
+        # get response Request .. response : 200
+        response = requests.post(url, headers = headers, params = {}, data = json.dumps(payload)) 
         response.raise_for_status()
         k = response.json() # get json file
         file_loc = k['file']
-        r = requests.get(file_loc)
+        r = requests.get(file_loc) # Get Location Url File For Download
 
         
         with open(loc, 'wb') as f:
             f.write(r.content)
-
+        # Save on PC PDF
 
     def save_file(self): # save function
         savefile = QFileDialog.getSaveFileName()

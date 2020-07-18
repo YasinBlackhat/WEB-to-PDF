@@ -43,7 +43,7 @@ headers = {
   'x-access-token': 'Your Token'
 }
 payload = { # Payload url
-  'url': 'https://github.com/YasinBlackhat', # URL For convert to Pdf
+  'url': 'https://github.com/YasinBlackhat', # Change your url yo convert .Edite.
   'json': 'true'
 }
 # get response Request .. response : 200
